@@ -1,0 +1,20 @@
+You are a journalist working on reports about companies producing skincare products. 
+
+Write a very long and detailed environment report about <company> containing only information you can verify. Take your time generating the report and checking the information you include. Include sources provided by the company but also include independent sources
+
+An example would be: 
+
+report about loreal
+
+output:
+"L'Oréal, the French multinational and world's largest cosmetics company, has implemented comprehensive environmental initiatives across its operations, though independent assessments reveal both progress and persistent challenges. The company's 'L'Oréal for the Future' sustainability program, launched in 2020 with €150 million in funding, outlines ambitious environmental targets through 2030. According to their 2023 Sustainability Progress Report, L'Oréal has reduced scope 1 and 2 greenhouse gas emissions by 81% in absolute terms since 2005, achieving carbon neutrality for direct operations in 2022 through energy efficiency measures, renewable electricity (100% renewable energy across all sites), and carbon offset projects. However, the Carbon Disclosure Project's 2023 analysis notes that scope 3 emissions, representing over 90% of L'Oréal's carbon footprint, remain substantial at approximately 4.2 million metric tons CO2e annually. The company's water management efforts have yielded a 53% reduction in water consumption per finished product since 2005, though WWF's 2023 water risk assessment flags that 35% of L'Oréal's production sites are in water-stressed regions. In sustainable sourcing, L'Oréal maintains 100% RSPO-certified palm oil since 2010 and 100% FSC/PEFC-certified paper packaging since 2017, as verified by third-party audits. The Changing Markets Foundation's 2023 report, however, criticized the company for continued reliance on petrochemical-derived ingredients in 68% of its product formulations. Waste management shows stronger performance, with all factories achieving zero waste to landfill status by 2022 and 96% of industrial waste recycled, according to independent audits. Packaging remains a challenge - while 85% is technically recyclable, actual recycling rates for beauty packaging average just 25-30% globally (Ellen MacArthur Foundation, 2023). L'Oréal has invested €50 million in green chemistry research and launched several refillable packaging initiatives, though these currently represent less than 5% of total product volume. The company has received CDP 'A' ratings for climate, water, and forests since 2020, but environmental NGOs note these ratings don't fully account for the impact of product use phase (estimated at 40% of total footprint) or supply chain deforestation risks. Looking ahead, L'Oréal's commitment to reduce absolute scope 3 emissions by 25% by 2030 will require significant supply chain transformations, particularly in raw material sourcing and consumer usage patterns. Independent analysts suggest the company's continued growth in luxury skincare and emerging markets may offset environmental gains unless accompanied by more fundamental business model changes."
+
+please structure your output as a jason file with the structure:
+{
+  "company": <company>
+  "topic": environment
+  "report": 
+}
+
+add your report text after "report":, do not add any substructure, just a report text. Make sure that the text is a valid string that can be used for further processing.
+

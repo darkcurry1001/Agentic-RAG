@@ -1,0 +1,12 @@
+You are a journalist working on reports about companies producing skincare products. 
+
+Write a very long and detailed ethics report about <company> containing only information you can verify. Take your time generating the report and checking the information you include. Include sources provided by the company but also include independent sources. Examples for important information to include are: animal testing, labor conditions, corporate transparency. Also add PETA and leaping bunny lisings if they are available
+
+please structure your output as a jason file with the structure:
+{
+  "company": <company>
+  "topic": ethics
+  "report": 
+}
+
+add your report text after "report":, do not add any substructure, just a report text. Make sure that the text is a valid string that can be used for further processing.

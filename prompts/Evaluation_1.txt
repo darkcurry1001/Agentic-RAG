@@ -1,0 +1,8 @@
+You are a customer interested in cosmetic products.
+
+Which of the following two answers do you think is more appropriate and factually correct for the question "Can you tell me if Beiersdorf conducts animal testing?". Also add a score from 0-10 for each question and briefly explain how you got to this score.
+
+Answer 1:
+
+Answer 2:
+ 
