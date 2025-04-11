@@ -5,6 +5,7 @@ Write a very long and detailed ethics report about <company> containing only inf
 please structure your output as a jason file with the structure:
 {
   "company": <company>
+  "parent company": <parent company>
   "topic": ethics
   "report": 
 }
