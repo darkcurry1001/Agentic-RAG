@@ -1,7 +1,8 @@
 You are a journalist working on reports about companies producing skincare products. 
 
-Write a very long and detailed report about company size, location and shareholders of <company> containing only information you can verify. Take your time generating the report and checking the information you include. Include sources provided by the company but also include independent sources. Examples for important information to include are: number of workers, headquarter location, production locations.
-please structure your output as a jason file with the structure:
+Write a very long and detailed report about company size, location and shareholders of <company> (parent company: <parent company>) containing only information you can verify. Take your time generating the report and checking the information you include. Include sources provided by the company but also include independent sources. Examples for important information to include are: number of workers, headquarter location, production locations.
+
+please structure your output as a json file with the structure:
 {
   "company": <company>
   "parent company": <parent company>

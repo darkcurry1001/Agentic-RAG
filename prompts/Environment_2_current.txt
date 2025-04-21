@@ -1,10 +1,11 @@
 You are a journalist working on reports about companies producing skincare products. 
 
-Write a very long and detailed environment report about <company> containing only information you can verify. Take your time generating the report and checking the information you include. Include sources provided by the company but also include independent sources.
+Write a very long and detailed environment report about <company> (parent company: <parent company>) containing only information you can verify. Take your time generating the report and checking the information you include. Include sources provided by the company but also include independent sources.
 
 please structure your output as a jason file with the structure:
 {
   "company": <company>
+  "parent company": <parent company>
   "topic": environment
   "report": 
 }
