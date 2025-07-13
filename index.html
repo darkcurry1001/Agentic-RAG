@@ -32,6 +32,11 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
 
+    db.collection('scenario_responses').limit(1).get()
+  .then(() => console.log('✅ Connected to Firestore!'))
+  .catch(error => console.error('❌ Firestore connection error:', error));
+
+
     const scenarios = [
       { id: 'scenario1', option1: 'human_eval_pdfs/scenario_1_32b.pdf', option2: 'human_eval_pdfs/Scenario1_32BS.pdf'},
       /*{ id: 'scenario2', option1: 'URL_TO_PDF_2A', option2: 'URL_TO_PDF_2B' },
