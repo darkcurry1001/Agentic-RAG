@@ -8,8 +8,8 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
  <style>
     body { font-family: sans-serif; margin: 0; padding: 20px; }
-    iframe { width: 90vw; height: 80vh; margin: 5vw 0; border: 1px solid #ccc; display: block; }
-    button { width: 90vw; padding: 5vw; font-size: 16px; margin-bottom: 30px; }
+    iframe { width: 90vw; height: 80vh; margin: 10px auto; border: 1px solid #ccc; display: block; }
+    button { width: 90vw; margin: 10px auto 30px auto; padding: 10px; font-size: 16px; display: block; }
     h2 { text-align: center; }
    #description { max-width: 800px; margin: 20px auto; text-align: center; font-size: 18px; }
   </style>
@@ -38,31 +38,31 @@
     const db = firebase.firestore();
 
     const scenarios = [
-      { id: 'scenario1', option1: 'human_eval_pdfs/scenario_1_32b.pdf', option2: 'human_eval_pdfs/Scenario1_32BS.pdf'},
-      { id: 'scenario2', option1: 'human_eval_pdfs/scenario_2_32b.pdf', option2: 'human_eval_pdfs/Scenario2_32BS.pdf'},
-      { id: 'scenario3', option1: 'human_eval_pdfs/scenario_3_32b.pdf', option2: 'human_eval_pdfs/Scenario3_32BS.pdf'},
-      { id: 'scenario4', option1: 'human_eval_pdfs/scenario_4_32b.pdf', option2: 'human_eval_pdfs/Scenario4_32BS.pdf'},
-      { id: 'scenario5', option1: 'human_eval_pdfs/scenario_5_32b.pdf', option2: 'human_eval_pdfs/Scenario5_32BS.pdf'},
-      { id: 'scenario6', option1: 'human_eval_pdfs/scenario_6_32b.pdf', option2: 'human_eval_pdfs/Scenario6_32BS.pdf'},
-      { id: 'scenario7', option1: 'human_eval_pdfs/scenario_7_32b.pdf', option2: 'human_eval_pdfs/Scenario7_32BS.pdf'},
-      { id: 'scenario8', option1: 'human_eval_pdfs/scenario_8_32b.pdf', option2: 'human_eval_pdfs/Scenario8_32BS.pdf'},
-      { id: 'scenario9', option1: 'human_eval_pdfs/scenario_9_32b.pdf', option2: 'human_eval_pdfs/Scenario9_32BS.pdf'},
-      { id: 'scenario10', option1: 'human_eval_pdfs/scenario_10_32b.pdf', option2: 'human_eval_pdfs/Scenario10_32BS.pdf'},
-      { id: 'scenario11', option1: 'human_eval_pdfs/scenario_11_32b.pdf', option2: 'human_eval_pdfs/Scenario11_32BS.pdf'},
-      { id: 'scenario12', option1: 'human_eval_pdfs/scenario_12_32b.pdf', option2: 'human_eval_pdfs/Scenario12_32BS.pdf'},
-      { id: 'scenario13', option1: 'human_eval_pdfs/scenario_13_32b.pdf', option2: 'human_eval_pdfs/Scenario13_32BS.pdf'},
-      { id: 'scenario14', option1: 'human_eval_pdfs/scenario_14_32b.pdf', option2: 'human_eval_pdfs/Scenario14_32BS.pdf'},
-      { id: 'scenario15', option1: 'human_eval_pdfs/scenario_15_32b.pdf', option2: 'human_eval_pdfs/Scenario15_32BS.pdf'},
-      { id: 'scenario16', option1: 'human_eval_pdfs/scenario_16_32b.pdf', option2: 'human_eval_pdfs/Scenario16_32BS.pdf'},
-      { id: 'scenario17', option1: 'human_eval_pdfs/scenario_17_32b.pdf', option2: 'human_eval_pdfs/Scenario17_32BS.pdf'},
-      { id: 'scenario18', option1: 'human_eval_pdfs/scenario_18_32b.pdf', option2: 'human_eval_pdfs/Scenario18_32BS.pdf'},
-      { id: 'scenario19', option1: 'human_eval_pdfs/scenario_19_32b.pdf', option2: 'human_eval_pdfs/Scenario19_32BS.pdf'},
-      { id: 'scenario20', option1: 'human_eval_pdfs/scenario_20_32b.pdf', option2: 'human_eval_pdfs/scenario_20_32b_simple.pdf'},
-      { id: 'scenario21', option1: 'human_eval_pdfs/scenario_21_32b.pdf', option2: 'human_eval_pdfs/scenario_21_32b_simple.pdf'},
-      { id: 'scenario22', option1: 'human_eval_pdfs/scenario_22_32b.pdf', option2: 'human_eval_pdfs/scenario_22_32b_simple.pdf'},
-      { id: 'scenario23', option1: 'human_eval_pdfs/scenario_23_32b.pdf', option2: 'human_eval_pdfs/scenario_23_32b_simple.pdf'},
-      { id: 'scenario24', option1: 'human_eval_pdfs/scenario_24_32b.pdf', option2: 'human_eval_pdfs/scenario_24_32b_simple.pdf'},
-      { id: 'scenario25', option1: 'human_eval_pdfs/scenario_25_32b.pdf', option2: 'human_eval_pdfs/scenario_25_32b_simple.pdf'},
+      { id: 'Scenario 1', option1: 'human_eval_pdfs/scenario_1_32b.pdf', option2: 'human_eval_pdfs/Scenario1_32BS.pdf'},
+      { id: 'Scenario 2', option1: 'human_eval_pdfs/scenario_2_32b.pdf', option2: 'human_eval_pdfs/Scenario2_32BS.pdf'},
+      { id: 'Scenario 3', option1: 'human_eval_pdfs/scenario_3_32b.pdf', option2: 'human_eval_pdfs/Scenario3_32BS.pdf'},
+      { id: 'Scenario 4', option1: 'human_eval_pdfs/scenario_4_32b.pdf', option2: 'human_eval_pdfs/Scenario4_32BS.pdf'},
+      { id: 'Scenario 5', option1: 'human_eval_pdfs/scenario_5_32b.pdf', option2: 'human_eval_pdfs/Scenario5_32BS.pdf'},
+      { id: 'Scenario 6', option1: 'human_eval_pdfs/scenario_6_32b.pdf', option2: 'human_eval_pdfs/Scenario6_32BS.pdf'},
+      { id: 'Scenario 7', option1: 'human_eval_pdfs/scenario_7_32b.pdf', option2: 'human_eval_pdfs/Scenario7_32BS.pdf'},
+      { id: 'Scenario 8', option1: 'human_eval_pdfs/scenario_8_32b.pdf', option2: 'human_eval_pdfs/Scenario8_32BS.pdf'},
+      { id: 'Scenario 9', option1: 'human_eval_pdfs/scenario_9_32b.pdf', option2: 'human_eval_pdfs/Scenario9_32BS.pdf'},
+      { id: 'Scenario 10', option1: 'human_eval_pdfs/scenario_10_32b.pdf', option2: 'human_eval_pdfs/Scenario10_32BS.pdf'},
+      { id: 'Scenario 11', option1: 'human_eval_pdfs/scenario_11_32b.pdf', option2: 'human_eval_pdfs/Scenario11_32BS.pdf'},
+      { id: 'Scenario 12', option1: 'human_eval_pdfs/scenario_12_32b.pdf', option2: 'human_eval_pdfs/Scenario12_32BS.pdf'},
+      { id: 'Scenario 13', option1: 'human_eval_pdfs/scenario_13_32b.pdf', option2: 'human_eval_pdfs/Scenario13_32BS.pdf'},
+      { id: 'Scenario 14', option1: 'human_eval_pdfs/scenario_14_32b.pdf', option2: 'human_eval_pdfs/Scenario14_32BS.pdf'},
+      { id: 'Scenario 15', option1: 'human_eval_pdfs/scenario_15_32b.pdf', option2: 'human_eval_pdfs/Scenario15_32BS.pdf'},
+      { id: 'Scenario 16', option1: 'human_eval_pdfs/scenario_16_32b.pdf', option2: 'human_eval_pdfs/Scenario16_32BS.pdf'},
+      { id: 'Scenario 17', option1: 'human_eval_pdfs/scenario_17_32b.pdf', option2: 'human_eval_pdfs/Scenario17_32BS.pdf'},
+      { id: 'Scenario 18', option1: 'human_eval_pdfs/scenario_18_32b.pdf', option2: 'human_eval_pdfs/Scenario18_32BS.pdf'},
+      { id: 'Scenario 19', option1: 'human_eval_pdfs/scenario_19_32b.pdf', option2: 'human_eval_pdfs/Scenario19_32BS.pdf'},
+      { id: 'Scenario 20', option1: 'human_eval_pdfs/scenario_20_32b.pdf', option2: 'human_eval_pdfs/scenario_20_32b_simple.pdf'},
+      { id: 'Scenario 21', option1: 'human_eval_pdfs/scenario_21_32b.pdf', option2: 'human_eval_pdfs/scenario_21_32b_simple.pdf'},
+      { id: 'Scenario 22', option1: 'human_eval_pdfs/scenario_22_32b.pdf', option2: 'human_eval_pdfs/scenario_22_32b_simple.pdf'},
+      { id: 'Scenario 23', option1: 'human_eval_pdfs/scenario_23_32b.pdf', option2: 'human_eval_pdfs/scenario_23_32b_simple.pdf'},
+      { id: 'Scenario 24', option1: 'human_eval_pdfs/scenario_24_32b.pdf', option2: 'human_eval_pdfs/scenario_24_32b_simple.pdf'},
+      { id: 'Scenario 25', option1: 'human_eval_pdfs/scenario_25_32b.pdf', option2: 'human_eval_pdfs/scenario_25_32b_simple.pdf'},
     ];
 
     // Shuffle the scenarios
