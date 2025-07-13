@@ -83,10 +83,10 @@
 
       container.innerHTML = `
         <p><strong>${id}</strong></p>
-        <iframe src="${option1}"></iframe>
-        <button onclick="submitAnswer('${id}', 'option1')">Choose Option 1</button>
-        <iframe src="${option2}"></iframe>
-        <button onclick="submitAnswer('${id}', 'option2')">Choose Option 2</button>
+        <iframe src="${options[0].url}"></iframe>
+        <button onclick="submitAnswer('${id}', '${options[0].label}')">Choose This Option</button>
+        <iframe src="${options[1].url}"></iframe>
+        <button onclick="submitAnswer('${id}', '${options[1].label}')">Choose This Option</button>
       `;
     }
 
