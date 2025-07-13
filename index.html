@@ -8,13 +8,18 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
  <style>
     body { font-family: sans-serif; margin: 0; padding: 20px; }
-    iframe { width: 100vw; height: 80vh; margin: 10px 0; border: 1px solid #ccc; display: block; }
-    button { width: 100%; padding: 10px; font-size: 16px; margin-bottom: 30px; }
+    iframe { width: 95vw; height: 80vh; margin: 10px 0; border: 1px solid #ccc; display: block; }
+    button { width: 95vw; padding: 10px; font-size: 16px; margin-bottom: 30px; }
     h2 { text-align: center; }
+   #description { max-width: 800px; margin: 20px auto; text-align: center; font-size: 18px; }
   </style>
 </head>
 <body>
   <h2>Skincare Agent evaluation</h2>
+  <div id="description">
+    <p>You will see 25 short scenarios. For each, please review the two presented options (PDFs) and choose the one that fits best based on your judgment. Your choice will be submitted automatically after each selection.</p>
+  </div>
+  <div id="scenarioContainer"></div>
   <div id="scenarioContainer"></div>
 
   <script>
