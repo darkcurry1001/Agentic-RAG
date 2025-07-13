@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scenario Choice Form</title>
+  <title>Skincare Agent evaluation</title>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
  <style>
@@ -14,7 +14,7 @@
   </style>
 </head>
 <body>
-  <h2>Scenario Choice Form</h2>
+  <h2>Skincare Agent evaluation</h2>
   <div id="scenarioContainer"></div>
 
   <script>
@@ -34,30 +34,30 @@
 
     const scenarios = [
       { id: 'scenario1', option1: 'human_eval_pdfs/scenario_1_32b.pdf', option2: 'human_eval_pdfs/Scenario1_32BS.pdf'},
-      /*{ id: 'scenario2', option1: 'URL_TO_PDF_2A', option2: 'URL_TO_PDF_2B' },
-      { id: 'scenario3', option1: 'URL_TO_PDF_3A', option2: 'URL_TO_PDF_3B' },
-      { id: 'scenario4', option1: 'URL_TO_PDF_4A', option2: 'URL_TO_PDF_4B' },
-      { id: 'scenario5', option1: 'URL_TO_PDF_5A', option2: 'URL_TO_PDF_5B' },
-      { id: 'scenario6', option1: 'URL_TO_PDF_6A', option2: 'URL_TO_PDF_6B' },
-      { id: 'scenario7', option1: 'URL_TO_PDF_7A', option2: 'URL_TO_PDF_7B' },
-      { id: 'scenario8', option1: 'URL_TO_PDF_8A', option2: 'URL_TO_PDF_8B' },
-      { id: 'scenario9', option1: 'URL_TO_PDF_9A', option2: 'URL_TO_PDF_9B' },
-      { id: 'scenario10', option1: 'URL_TO_PDF_10A', option2: 'URL_TO_PDF_10B' },
-      { id: 'scenario11', option1: 'URL_TO_PDF_11A', option2: 'URL_TO_PDF_11B' },
-      { id: 'scenario12', option1: 'URL_TO_PDF_12A', option2: 'URL_TO_PDF_12B' },
-      { id: 'scenario13', option1: 'URL_TO_PDF_13A', option2: 'URL_TO_PDF_13B' },
-      { id: 'scenario14', option1: 'URL_TO_PDF_14A', option2: 'URL_TO_PDF_14B' },
-      { id: 'scenario15', option1: 'URL_TO_PDF_15A', option2: 'URL_TO_PDF_15B' },
-      { id: 'scenario16', option1: 'URL_TO_PDF_16A', option2: 'URL_TO_PDF_16B' },
-      { id: 'scenario17', option1: 'URL_TO_PDF_17A', option2: 'URL_TO_PDF_17B' },
-      { id: 'scenario18', option1: 'URL_TO_PDF_18A', option2: 'URL_TO_PDF_18B' },
-      { id: 'scenario19', option1: 'URL_TO_PDF_19A', option2: 'URL_TO_PDF_19B' },
-      { id: 'scenario20', option1: 'URL_TO_PDF_20A', option2: 'URL_TO_PDF_20B' },
-      { id: 'scenario21', option1: 'URL_TO_PDF_21A', option2: 'URL_TO_PDF_21B' },
-      { id: 'scenario22', option1: 'URL_TO_PDF_22A', option2: 'URL_TO_PDF_22B' },
-      { id: 'scenario23', option1: 'URL_TO_PDF_23A', option2: 'URL_TO_PDF_23B' },
-      { id: 'scenario24', option1: 'URL_TO_PDF_24A', option2: 'URL_TO_PDF_24B' },
-      { id: 'scenario25', option1: 'URL_TO_PDF_25A', option2: 'URL_TO_PDF_25B' },*/
+      { id: 'scenario2', option1: 'human_eval_pdfs/scenario_2_32b.pdf', option2: 'human_eval_pdfs/Scenario2_32BS.pdf'},
+      { id: 'scenario3', option1: 'human_eval_pdfs/scenario_3_32b.pdf', option2: 'human_eval_pdfs/Scenario3_32BS.pdf'},
+      { id: 'scenario4', option1: 'human_eval_pdfs/scenario_4_32b.pdf', option2: 'human_eval_pdfs/Scenario4_32BS.pdf'},
+      { id: 'scenario5', option1: 'human_eval_pdfs/scenario_5_32b.pdf', option2: 'human_eval_pdfs/Scenario5_32BS.pdf'},
+      { id: 'scenario6', option1: 'human_eval_pdfs/scenario_6_32b.pdf', option2: 'human_eval_pdfs/Scenario6_32BS.pdf'},
+      { id: 'scenario7', option1: 'human_eval_pdfs/scenario_7_32b.pdf', option2: 'human_eval_pdfs/Scenario7_32BS.pdf'},
+      { id: 'scenario8', option1: 'human_eval_pdfs/scenario_8_32b.pdf', option2: 'human_eval_pdfs/Scenario8_32BS.pdf'},
+      { id: 'scenario9', option1: 'human_eval_pdfs/scenario_9_32b.pdf', option2: 'human_eval_pdfs/Scenario9_32BS.pdf'},
+      { id: 'scenario10', option1: 'human_eval_pdfs/scenario_10_32b.pdf', option2: 'human_eval_pdfs/Scenario10_32BS.pdf'},
+      { id: 'scenario11', option1: 'human_eval_pdfs/scenario_11_32b.pdf', option2: 'human_eval_pdfs/Scenario11_32BS.pdf'},
+      { id: 'scenario12', option1: 'human_eval_pdfs/scenario_12_32b.pdf', option2: 'human_eval_pdfs/Scenario12_32BS.pdf'},
+      { id: 'scenario13', option1: 'human_eval_pdfs/scenario_13_32b.pdf', option2: 'human_eval_pdfs/Scenario13_32BS.pdf'},
+      { id: 'scenario14', option1: 'human_eval_pdfs/scenario_14_32b.pdf', option2: 'human_eval_pdfs/Scenario14_32BS.pdf'},
+      { id: 'scenario15', option1: 'human_eval_pdfs/scenario_15_32b.pdf', option2: 'human_eval_pdfs/Scenario15_32BS.pdf'},
+      { id: 'scenario16', option1: 'human_eval_pdfs/scenario_16_32b.pdf', option2: 'human_eval_pdfs/Scenario16_32BS.pdf'},
+      { id: 'scenario17', option1: 'human_eval_pdfs/scenario_17_32b.pdf', option2: 'human_eval_pdfs/Scenario17_32BS.pdf'},
+      { id: 'scenario18', option1: 'human_eval_pdfs/scenario_18_32b.pdf', option2: 'human_eval_pdfs/Scenario18_32BS.pdf'},
+      { id: 'scenario19', option1: 'human_eval_pdfs/scenario_19_32b.pdf', option2: 'human_eval_pdfs/Scenario19_32BS.pdf'},
+      { id: 'scenario20', option1: 'human_eval_pdfs/scenario_20_32b.pdf', option2: 'human_eval_pdfs/Scenario20_32BS.pdf'},
+      { id: 'scenario21', option1: 'human_eval_pdfs/scenario_21_32b.pdf', option2: 'human_eval_pdfs/Scenario21_32BS.pdf'},
+      { id: 'scenario22', option1: 'human_eval_pdfs/scenario_22_32b.pdf', option2: 'human_eval_pdfs/Scenario22_32BS.pdf'},
+      { id: 'scenario23', option1: 'human_eval_pdfs/scenario_23_32b.pdf', option2: 'human_eval_pdfs/Scenario23_32BS.pdf'},
+      { id: 'scenario24', option1: 'human_eval_pdfs/scenario_24_32b.pdf', option2: 'human_eval_pdfs/Scenario24_32BS.pdf'},
+      { id: 'scenario25', option1: 'human_eval_pdfs/scenario_25_32b.pdf', option2: 'human_eval_pdfs/Scenario25_32BS.pdf'},
     ];
 
     // Shuffle the scenarios
@@ -74,6 +74,12 @@
       }
 
       const { id, option1, option2 } = shuffled[currentIndex];
+
+      // Randomize order of the two options
+      const options = [
+        { label: 'option1', url: option1 },
+        { label: 'option2', url: option2 }
+      ].sort(() => Math.random() - 0.5);
 
       container.innerHTML = `
         <p><strong>${id}</strong></p>
