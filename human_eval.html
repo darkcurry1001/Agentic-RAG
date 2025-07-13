@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scenario Choice Form</title>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; }
+    iframe { width: 100%; height: 400px; margin: 10px 0; border: 1px solid #ccc; }
+    button { width: 100%; padding: 10px; font-size: 16px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h2>Scenario Choice Form</h2>
+  <div id="scenarioContainer"></div>
+
+  <script>
+    // Firebase config (replace with your values)
+    const firebaseConfig = {
+        apiKey: "AIzaSyCW3JYlGpb2-Z0g3P7u-CabvA2ge8EfZUw",
+        authDomain: "agentic-rag-bf8e8.firebaseapp.com",
+        projectId: "agentic-rag-bf8e8",
+        storageBucket: "agentic-rag-bf8e8.firebasestorage.app",
+        messagingSenderId: "605691486028",
+        appId: "1:605691486028:web:0d1c15d6405600a790b9e9",
+        measurementId: "G-MMZX7CBWYL"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const scenarios = [
+      { id: 'scenario1', option1: 'https://1drv.ms/b/c/ada0f21b17aa16a8/EQEG3McqUARKk3qhccmrLd0BGjvVfE5-FQoq3FE0CJ42-Q?e=jI9UQY', option2: 'https://1drv.ms/b/c/ada0f21b17aa16a8/Ee1kIOukVPNHpwJJk2d5jpIBhbT-8D00774QyqGoibG1Ng?e=LGEebR' },
+      /*{ id: 'scenario2', option1: 'URL_TO_PDF_2A', option2: 'URL_TO_PDF_2B' },
+      { id: 'scenario3', option1: 'URL_TO_PDF_3A', option2: 'URL_TO_PDF_3B' },
+      { id: 'scenario4', option1: 'URL_TO_PDF_4A', option2: 'URL_TO_PDF_4B' },
+      { id: 'scenario5', option1: 'URL_TO_PDF_5A', option2: 'URL_TO_PDF_5B' },
+      { id: 'scenario6', option1: 'URL_TO_PDF_6A', option2: 'URL_TO_PDF_6B' },
+      { id: 'scenario7', option1: 'URL_TO_PDF_7A', option2: 'URL_TO_PDF_7B' },
+      { id: 'scenario8', option1: 'URL_TO_PDF_8A', option2: 'URL_TO_PDF_8B' },
+      { id: 'scenario9', option1: 'URL_TO_PDF_9A', option2: 'URL_TO_PDF_9B' },
+      { id: 'scenario10', option1: 'URL_TO_PDF_10A', option2: 'URL_TO_PDF_10B' },
+      { id: 'scenario11', option1: 'URL_TO_PDF_11A', option2: 'URL_TO_PDF_11B' },
+      { id: 'scenario12', option1: 'URL_TO_PDF_12A', option2: 'URL_TO_PDF_12B' },
+      { id: 'scenario13', option1: 'URL_TO_PDF_13A', option2: 'URL_TO_PDF_13B' },
+      { id: 'scenario14', option1: 'URL_TO_PDF_14A', option2: 'URL_TO_PDF_14B' },
+      { id: 'scenario15', option1: 'URL_TO_PDF_15A', option2: 'URL_TO_PDF_15B' },
+      { id: 'scenario16', option1: 'URL_TO_PDF_16A', option2: 'URL_TO_PDF_16B' },
+      { id: 'scenario17', option1: 'URL_TO_PDF_17A', option2: 'URL_TO_PDF_17B' },
+      { id: 'scenario18', option1: 'URL_TO_PDF_18A', option2: 'URL_TO_PDF_18B' },
+      { id: 'scenario19', option1: 'URL_TO_PDF_19A', option2: 'URL_TO_PDF_19B' },
+      { id: 'scenario20', option1: 'URL_TO_PDF_20A', option2: 'URL_TO_PDF_20B' },
+      { id: 'scenario21', option1: 'URL_TO_PDF_21A', option2: 'URL_TO_PDF_21B' },
+      { id: 'scenario22', option1: 'URL_TO_PDF_22A', option2: 'URL_TO_PDF_22B' },
+      { id: 'scenario23', option1: 'URL_TO_PDF_23A', option2: 'URL_TO_PDF_23B' },
+      { id: 'scenario24', option1: 'URL_TO_PDF_24A', option2: 'URL_TO_PDF_24B' },
+      { id: 'scenario25', option1: 'URL_TO_PDF_25A', option2: 'URL_TO_PDF_25B' },*/
+    ];
+
+    // Shuffle the scenarios
+    const shuffled = scenarios.sort(() => Math.random() - 0.5);
+
+    let currentIndex = 0;
+
+    const container = document.getElementById('scenarioContainer');
+
+    function showScenario() {
+      if (currentIndex >= shuffled.length) {
+        container.innerHTML = '<p>Thank you! All answers submitted.</p>';
+        return;
+      }
+
+      const { id, option1, option2 } = shuffled[currentIndex];
+
+      container.innerHTML = `
+        <p><strong>${id}</strong></p>
+        <embed src="${option1}"></embed>
+        <button onclick="submitAnswer('${id}', 'option1')">Choose Option 1</button>
+        <iframe src="${option2}"></iframe>
+        <button onclick="submitAnswer('${id}', 'option2')">Choose Option 2</button>
+      `;
+    }
+
+    async function submitAnswer(scenarioId, choice) {
+      await db.collection('scenario_responses').add({
+        scenarioId,
+        choice,
+        timestamp: new Date().toISOString()
+      });
+      currentIndex++;
+      showScenario();
+    }
+
+    showScenario();
+  </script>
+</body>
+</html>
